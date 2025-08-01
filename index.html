@@ -1,153 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hagen & Asociados</title>
-<style>
-  body {
-    font-family: 'Georgia', serif;
-    background-color: #f5f5f5;
-    color: #222;
-    margin: 0; padding: 0;
-  }
-  header {
-    background-color: #012a4a;
-    color: #fcd34d; /* dorado */
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    cursor: default;
-  }
-  nav button {
-    background: none;
-    border: none;
-    color: #fcd34d;
-    font-size: 1rem;
-    margin-left: 20px;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  nav button:hover, nav button.active {
-    background-color: #fcd34d;
-    color: #012a4a;
-    font-weight: bold;
-  }
-  main {
-    max-width: 900px;
-    margin: 30px auto;
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
-  }
-  section {
-    display: none;
-  }
-  section.active {
-    display: block;
-  }
-  h2 {
-    color: #012a4a;
-    margin-top: 0;
-  }
-  .foto {
-    float: right;
-    margin-left: 20px;
-    width: 160px;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
-  }
-  footer {
-    text-align: center;
-    margin: 40px 0 20px;
-    color: #666;
-    font-size: 0.9rem;
-  }
-  a {
-    color: #012a4a;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Hagen & Asociados - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-<header>
-  <h1>Hagen & Asociados</h1>
-  <nav>
-    <button class="nav-btn active" data-target="inicio">Inicio</button>
-    <button class="nav-btn" data-target="sobre-mi">Sobre mí</button>
-    <button class="nav-btn" data-target="servicios">Servicios</button>
-    <button class="nav-btn" data-target="contacto">Contacto</button>
-  </nav>
-</header>
-
-<main>
-  <section id="inicio" class="active">
+  <header class="main-header">
+    <div class="header-bg"></div>
+    <div class="header-content">
+      <h1>Hagen & Asociados</h1>
+      <p class="slogan">Compromiso, eficiencia y excelencia</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+ <main>
+  <section>
     <h2>Bienvenido a Hagen & Asociados</h2>
-    <p>Somos un estudio jurídico multidisciplinar con sede en Buenos Aires, comprometidos con la excelencia y el profesionalismo en cada caso.</p>
-    <p>Dirigido por el abogado Tom Hagen, especializado en derecho penal y civil, ofrecemos asesoría legal integral para particulares, empresas y entidades públicas.</p>
-  </section>
-
-  <section id="sobre-mi">
-    <h2>Sobre Tom Hagen</h2>
-    <img src="https://via.placeholder.com/160x200.png?text=Tu+Foto" alt="Foto de Tom Hagen" class="foto" />
-    <p>Tom Hagen es abogado con amplia experiencia en derecho penal y civil, con un fuerte compromiso en brindar soluciones legales personalizadas y efectivas.</p>
-    <p>Como miembro del Colegio de Abogados de Buenos Aires, mantiene un enfoque multidisciplinar y ético para la defensa y asesoramiento de sus clientes.</p>
-  </section>
-
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Asesoría en Derecho Penal</li>
-      <li>Defensa en Juicios Civiles</li>
-      <li>Contratos y Negociaciones</li>
-      <li>Representación ante Entidades Públicas</li>
-      <li>Consultoría Jurídica para Empresas</li>
-    </ul>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Podés comunicarte con nosotros a través de los siguientes medios:</p>
-    <ul>
-      <li>Email: <a href="mailto:contacto@hagenasociados.com">contacto@hagenasociados.com</a></li>
-      <li>Teléfono: ‪+54 11 1234 5678‬</li>
-      <li>Dirección: Av. Siempre Viva 742, Buenos Aires</li>
-    </ul>
+    <p>
+      En Hagen & Asociados ofrecemos asesoría jurídica integral para empresas y particulares. Nuestro equipo de abogados está comprometido con la excelencia, la ética y la eficiencia en cada caso.
+    </p>
+    <p>
+      Nos especializamos en diferentes ramas del derecho, puedes consultarlas en nuestros servicios.
+    </p>
+    <a href="servicios.html" class="btn">Ver nuestros servicios</a>
   </section>
 </main>
-
-<footer>
-  <p>© 2025 Hagen & Asociados. Todos los derechos reservados.</p>
-</footer>
-
-<script>
-  // Navegación para mostrar y ocultar secciones
-  const buttons = document.querySelectorAll('nav button');
-  const sections = document.querySelectorAll('main section');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Quitar active de todos los botones y secciones
-      buttons.forEach(b => b.classList.remove('active'));
-      sections.forEach(sec => sec.classList.remove('active'));
-
-      // Activar el botón y la sección correspondiente
-      btn.classList.add('active');
-      const target = btn.getAttribute('data-target');
-      document.getElementById(target).classList.add('active');
-    });
-  });
-</script>
+  <footer>
+    <div class="social">
+      <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a>
+    </div>
+    <p>&copy; 2025 Hagen & Asociados. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
