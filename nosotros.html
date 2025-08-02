@@ -1,15 +1,98 @@
-<main>
-  <section>
-    <h2>Sobre Nosotros</h2>
-    <p>
-      Hagen & Asociados fue fundado en 2010 y desde entonces hemos acompañado a empresas y particulares en sus desafíos legales. Nuestro equipo está formado por abogados especializados en distintas áreas del derecho, con amplia experiencia y vocación de servicio.
-    </p>
-    <p>
-      Nuestra misión es brindar soluciones jurídicas efectivas, con honestidad y profesionalismo. Nos caracteriza la atención personalizada y el compromiso con los resultados.
-    </p>
-    <h3>Nuestro equipo</h3>
-    <ul>
-      <li><strong>Dr. Juan Hagen</strong> – Socio fundador, especialista en derecho empresarial.</li>
-    </ul>
-  </section>
-</main>
+<!-- Sección: Nuestro equipo -->
+<section style="padding: 40px; font-family: sans-serif; background-color: #f9f9f9;">
+  <h2 style="text-align: center; font-size: 2em; margin-bottom: 40px;">Nuestro equipo</h2>
+
+  <div class="equipo-container">
+    <div class="miembro">
+      <div class="imagen-hagen"></div>
+      <div class="info">
+        <h3>Tom Hagen</h3>
+        <p class="cargo">Socio Fundador</p>
+        <p class="descripcion">
+          Tom Hagen es el fundador de Hagen & Asociados. Especializado en derecho penal y asesoramiento estratégico. Con visión, compromiso y experiencia, lidera cada caso con precisión.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.equipo-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.miembro {
+  display: flex;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 700px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.imagen-hagen {
+  background-image: url('URL-DE-TU-IMAGEN-AQUÍ'); /* ← poné el enlace a la imagen de Hagen */
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  min-height: 250px;
+  transition: filter 0.3s ease;
+}
+
+.info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.miembro:hover .info,
+.miembro:focus-within .info {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.cargo {
+  font-weight: bold;
+  color: #555;
+  margin-top: 5px;
+}
+
+.descripcion {
+  margin-top: 15px;
+  color: #444;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .miembro {
+    flex-direction: column;
+    align-items: center;
+  }
+  .imagen-hagen {
+    width: 100%;
+    height: 250px;
+  }
+  .info {
+    transform: translateY(20px);
+    opacity: 0;
+    text-align: center;
+  }
+  .miembro:hover .info,
+  .miembro:focus-within .info {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+</style>
