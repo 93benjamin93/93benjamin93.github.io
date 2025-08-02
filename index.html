@@ -5,7 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hagen & Asociados</title>
   <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    /* Estilo hero insertado directamente */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 5%;
+      background-color: #f2f2f2;
+    }
+
+    .hero-texto {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .hero-texto h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .hero-texto p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: #003366;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #002244;
+    }
+
+    .hero-imagen {
+      flex: 1;
+      height: 350px;
+      background-image: url('assets/juicio.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-imagen {
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Franja azul con logo -->
@@ -21,11 +86,15 @@
     <a href="contacto.html">Contacto</a>
   </nav>
 
-  <!-- Zona blanca de contenido -->
-  <main class="main-content">
-    <h1>Bienvenidos a Hagen & Asociados</h1>
-    <p>Despacho jurídico profesional, defensor de tus derechos.</p>
-  </main>
+  <!-- Sección hero con imagen y bienvenida -->
+  <section class="hero">
+    <div class="hero-texto">
+      <h1>Hagen & Asociados</h1>
+      <p>Comprometidos con la justicia. Defensa legal con experiencia, visión y estrategia.</p>
+      <a href="nosotros.html" class="btn">Conocé a nuestro equipo</a>
+    </div>
+    <div class="hero-imagen"></div>
+  </section>
 
   <script src="scripts/main.js"></script>
 </body>
