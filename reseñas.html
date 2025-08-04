@@ -1,1 +1,68 @@
 
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
+
+<script>
+  // Tu configuración de Firebase (esto lo copias de tu consola)
+  const firebaseConfig = {
+    apiKey: "TU_API_KEY",
+    authDomain: "TU_DOMINIO.firebaseapp.com",
+    projectId: "hagen-reseñas",
+    storageBucket: "hagen-reseñas.appspot.com",
+    messagingSenderId: "XXXXXXX",
+    appId: "XXXXXXXXXXXXXX"
+  };
+
+  // Inicializar Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+<script>
+  const form = document.querySelector('.form-opinion');
+  const lista = document.querySelector('.opiniones');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const nombre = form.nombre.value.trim();
+    const estrellas = parseInt(form.estrellas.value);
+    const comentario = form.comentario.value.trim();
+
+    if (!nombre || !estrellas || !comentario) return;
+
+    // Guardar en Firebase
+    await db.collection('opiniones').add({
+      nombre,
+      estrellas,
+      comentario,
+      fecha: new Date()
+    });
+
+    form.reset();
+  });
+
+  // Mostrar reseñas en tiempo real
+  db.collection('opiniones')
+    .orderBy('fecha', 'desc')
+    .onSnapshot(snapshot => {
+      // Eliminar opiniones actuales
+      const elementosExistentes = document.querySelectorAll('.opinion-dinamica');
+      elementosExistentes.forEach(el => el.remove());
+
+      // Agregar cada reseña
+      snapshot.forEach(doc => {
+        const data = doc.data();
+
+        const nueva = document.createElement('div');
+        nueva.classList.add('opinion', 'opinion-dinamica');
+        nueva.innerHTML = `
+          <p class="nombre">${data.nombre}</p>
+          <p class="estrellas">${'⭐'.repeat(data.estrellas)}</p>
+          <p>${data.comentario}</p>
+        `;
+        lista.insertBefore(nueva, form);
+      });
+    });
+</script>
